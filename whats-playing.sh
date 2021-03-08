@@ -8,9 +8,9 @@ function go() {
 
 function __whats_playing() {
 
-    CURL_URL="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=reydh&api_key=$LASTFM_API_KEY&format=json"
+    curl_url="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=reydh&api_key=$LASTFM_API_KEY&format=json"
 
-    curl_response=$(curl --silent $CURL_URL)
+    curl_response=$(curl --silent $curl_url)
 
     now_playing=$(echo $curl_response | jq --raw-output '.recenttracks.track[0]."@attr".nowplaying')
     track_artist=$(echo $curl_response | jq --raw-output '.recenttracks.track[0].artist."#text"')
