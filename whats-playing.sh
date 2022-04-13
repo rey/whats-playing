@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Get this from https://www.last.fm/api/accounts
 LASTFM_API_KEY="add_your_lastfm_api_key"
 
 function go() {
